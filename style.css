@@ -132,7 +132,7 @@ body{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: rgb(235, 235, 235);
     z-index: 9999; 
     display: flex;
     justify-content: center;
@@ -142,8 +142,8 @@ body{
 
 .container-bolinhas {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     animation: girar 2s linear infinite; 
 }
 
@@ -157,7 +157,7 @@ body{
     left: 50%;
     margin-top: -15px;
     margin-left: -15px;
-    transition: all 1s ease-in-out;
+    transition: all 1.5s ease-in-out;
 }
 
 .bolinha1 { transform: translateY(-45px); }
