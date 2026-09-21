@@ -30,10 +30,11 @@ body{
     top: 100px;
     left: 100px;
     width: 300px;
-    background-color: rgba(220, 0, 0, 0.95);
+    background-color: rgba(200, 0, 0, 0.9);
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
     overflow: hidden;
+    cursor: pointer;
 }
 
 .janela-cabeca {
@@ -50,6 +51,9 @@ body{
     margin-left: auto;
 }
 
+#janela-clima, #janela-bemvindo{
+    user-select: none;
+}
 
 .btn-fechar {
     background-color: rgba(255, 255, 255, 0.9);
@@ -71,17 +75,17 @@ body{
 .icone {
     width: 80px;
     text-align: center;
-    cursor: grab;
     position: absolute;
     touch-action: none;
 }
 
 /*
-#btn-calc     { top: 360px; left: 20px; }
+#btn-calc     { top: 460px; left: 20px; }
 */
 #btn-clima    { top: 160px; left: 20px; }
 #btn-notas    { top: 260px; left: 20px; }
 #btn-bemvindo { top: 60px; left: 20px; }
+#btn-pesquisar {top: 360px; left: 20px}
  
 #texto-notas {
     width: 100%;
@@ -94,4 +98,16 @@ body{
 
 #texto-notas::placeholder{
     color: rgba(255, 255, 255, 0.6)
+}
+
+#btn-fazer-pesquisa{
+    width: 100%; padding: 8px; border-radius: 6px;
+    border: none; background-color: rgba(92, 91, 91, 0.6); color: white;
+    cursor: pointer; font-weight: bold;
+}
+
+#campo-pesquisa{
+    width: 100%; padding: 8px; border-radius: 6px;
+    border: none; outline: none; box-sizing:
+    border-box; margin-bottom: 8px;
 }

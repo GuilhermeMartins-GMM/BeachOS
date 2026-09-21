@@ -86,6 +86,36 @@ fecharMensagem.addEventListener('click', function() {
     janelaMensagem.style.display = 'none';
 });
 
+//pesquisa
+const btnPesquisar = document.getElementById('btn-pesquisar');
+const janelaPesquisa = document.getElementById('janela-pesquisa');
+const fecharPesquisa = document.getElementById('fechar-pesquisa');
+
+const campoPesquisa = document.getElementById('campo-pesquisa');
+const btnFazerPesquisa = document.getElementById('btn-fazer-pesquisa');
+
+btnPesquisar.addEventListener('click', function() {
+    janelaPesquisa.style.display = 'block';
+});
+fecharPesquisa.addEventListener('click', function() {
+    janelaPesquisa.style.display = 'none';
+});
+
+function executarPesquisa() {
+    const termo = campoPesquisa.value.trim();
+    if (termo !== '') {
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(termo)}`, '_blank');
+    }
+}
+
+btnFazerPesquisa.addEventListener('click', executarPesquisa);
+
+campoPesquisa.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        executarPesquisa();
+    }
+});
+
 //arrastar
 function tornarArrastavel(janela) {
     const cabeca = janela.querySelector('.janela-cabeca') || janela;
@@ -131,8 +161,10 @@ function tornarArrastavel(janela) {
 tornarArrastavel(janelaClima);
 tornarArrastavel(janelaNotas);
 tornarArrastavel(janelaMensagem);
+tornarArrastavel(janelaPesquisa);
 
 //tornarArrastavel(btnCalc);
 tornarArrastavel(btnClima);
 tornarArrastavel(btnNotas);
 tornarArrastavel(btnMensagem);
+tornarArrastavel(btnPesquisar);

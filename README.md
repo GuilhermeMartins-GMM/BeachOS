@@ -2,11 +2,12 @@
 
 An OS made by me to stardance hack club
 
-This is only the first version, in the final, it will have: a search app and a calculator app
+This is only the first version, in the final, it will have a calculator app and more
 
 ## Features
 - A weather app
 - A notes app
+- A search app
 
 HTML - Java Script - CSS
 
