@@ -100,14 +100,14 @@ body{
     color: rgba(255, 255, 255, 0.6)
 }
 
-#btn-fazer-pesquisa{
-    width: 100%; padding: 8px; border-radius: 6px;
-    border: none; background-color: rgba(92, 91, 91, 0.6); color: white;
-    cursor: pointer; font-weight: bold;
-}
-
 #campo-pesquisa{
     width: 100%; padding: 8px; border-radius: 6px;
     border: none; outline: none; box-sizing:
     border-box; margin-bottom: 8px;
+}
+
+#btn-fazer-pesquisa{
+    width: 100%; padding: 8px; border-radius: 6px;
+    border: none; background-color: rgba(67, 0, 77, 0.9); color: white;
+    cursor: pointer; font-weight: bold;
 }
