@@ -1,5 +1,5 @@
 body{
-    background-image: url('imagens/fundo.jpg');
+    background-image: url('imagens/fundo.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -44,4 +44,9 @@ body{
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
+
+.icone img {
+    border-radius: 14px;
+    object-fit: cover;
 }
