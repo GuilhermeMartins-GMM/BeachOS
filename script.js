@@ -87,7 +87,7 @@ fecharMensagem.addEventListener('click', function() {
 
 //arrastar
 function tornarArrastavel(janela) {
-    const cabeca = janela.querySelector('.janela-cabeca');
+    const cabeca = janela.querySelector('.janela-cabeca') || janela;
     
     let offsetX = 0;
     let offsetY = 0;
@@ -130,3 +130,8 @@ tornarArrastavel(janelaCalc);
 tornarArrastavel(janelaClima);
 tornarArrastavel(janelaNotas);
 tornarArrastavel(janelaMensagem);
+
+tornarArrastavel(btnCalc);
+tornarArrastavel(btnClima);
+tornarArrastavel(btnNotas);
+tornarArrastavel(btnMensagem);

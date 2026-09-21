@@ -13,7 +13,7 @@ body{
     height: 40px;
     color: white;
     font-weight: bold;
-    font-size: 26px;
+    font-size: 22px;
     border-radius: 0px 0px 6px 6px;
     display: flex; justify-content: space-between; 
     background-color: rgba(0,0,0,0.5);
@@ -55,9 +55,19 @@ body{
     object-fit: cover;
 }
 
-.icone{
+.icone {
     color: white;
+    width: 80px;
+    text-align: center;
+    cursor: grab;
+    position: absolute;
+    touch-action: none;
 }
+
+#btn-calc     { top: 60px; left: 20px; }
+#btn-clima    { top: 160px; left: 20px; }
+#btn-notas    { top: 260px; left: 20px; }
+#btn-bemvindo { top: 360px; left: 20px; }
 
 #texto-notas {
     width: 100%;
