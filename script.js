@@ -168,3 +168,21 @@ tornarArrastavel(btnClima);
 tornarArrastavel(btnNotas);
 tornarArrastavel(btnMensagem);
 tornarArrastavel(btnPesquisar);
+
+// tela de carregamento
+window.addEventListener('load', () => {
+    const telaCarregamento = document.getElementById('tela-carregamento');
+    const containerBolinhas = document.querySelector('.container-bolinhas');
+
+    setTimeout(() => {
+        containerBolinhas.classList.add('juntar');
+    }, 2000);
+
+    setTimeout(() => {
+        telaCarregamento.style.opacity = '0';
+    }, 4000);
+
+    setTimeout(() => {
+        telaCarregamento.style.display = 'none';
+    }, 5000);
+});
