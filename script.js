@@ -47,29 +47,54 @@ fecharNotas.addEventListener('click', function() {
     janelaNotas.style.display = 'none';
 });
 
-//arrastar
-function tornarArrastavel(janela){
-    const cabeca=janela.querySelector('.janela-cabeca');
-    function mover(e){
-        const clienteX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clienteY = e.touches ? e.touches[0].clientY : e.clientY;
+//mensagem inicial
+const btnMensagem = document.getElementById('btn-bemvindo');
+const janelaMensagem = document.getElementById('janela-bemvindo');
+const fecharMensagem = document.getElementById('fechar-bemvindo');
 
-        janela.style.left = clienteX + 'px';
-        janela.style.top = clienteY + 'px';
+btnMensagem.addEventListener('click', function() {
+    janelaMensagem.style.display = 'block';
+});
+fecharMensagem.addEventListener('click', function() {
+    janelaMensagem.style.display = 'none';
+});
+
+//arrastar
+function tornarArrastavel(janela) {
+    const cabeca = janela.querySelector('.janela-cabeca');
+    
+    let offsetX = 0;
+    let offsetY = 0;
+
+    function getPos(e) {
+        return e.touches ? e.touches[0] : e;
     }
 
-    function iniciar(){
+    function mover(e) {
+        const pos = getPos(e);
+        janela.style.left = (pos.clientX - offsetX) + 'px';
+        janela.style.top = (pos.clientY - offsetY) + 'px';
+    }
+
+    function iniciar(e) {
+        const pos = getPos(e);
+        
+        offsetX = pos.clientX - janela.offsetLeft;
+        offsetY = pos.clientY - janela.offsetTop;
+
         window.addEventListener('mousemove', mover);
         window.addEventListener('touchmove', mover);
     }
 
-    function parar(){
+    function parar() {
         window.removeEventListener('mousemove', mover);
         window.removeEventListener('touchmove', mover);
     }
 
-    cabeca.addEventListener('mousedown', iniciar);
-    cabeca.addEventListener('touchstart', iniciar);
+    if (cabeca) {
+        cabeca.addEventListener('mousedown', iniciar);
+        cabeca.addEventListener('touchstart', iniciar);
+    }
 
     window.addEventListener('mouseup', parar);
     window.addEventListener('touchend', parar);
@@ -78,3 +103,4 @@ function tornarArrastavel(janela){
 tornarArrastavel(janelaCalc);
 tornarArrastavel(janelaClima);
 tornarArrastavel(janelaNotas);
+tornarArrastavel(janelaMensagem);
