@@ -179,10 +179,14 @@ window.addEventListener('load', () => {
     }, 2000);
 
     setTimeout(() => {
+        telaCarregamento.classList.add('escurecer');
+    }, 3200);
+
+    setTimeout(() => {
         telaCarregamento.style.opacity = '0';
-    }, 4000);
+    }, 4500);
 
     setTimeout(() => {
         telaCarregamento.style.display = 'none';
-    }, 5000);
+    }, 5500);
 });

@@ -132,19 +132,23 @@ body{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(235, 235, 235);
-    z-index: 9999; 
+    background-color: rgb(220, 220, 220);
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 1s ease-out;
+    transition: background-color 1s ease, opacity 1s ease-out; 
+}
+
+#tela-carregamento.escurecer {
+    background-color: rgba(19, 19, 19, 0.9);
 }
 
 .container-bolinhas {
     position: relative;
     width: 100px;
     height: 100px;
-    animation: girar 2s linear infinite; 
+    animation: girar 2s linear infinite 
 }
 
 .bolinha {
