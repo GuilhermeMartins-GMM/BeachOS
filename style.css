@@ -80,9 +80,7 @@ body{
     touch-action: none;
 }
 
-/*
 #btn-calc     { top: 460px; left: 20px; }
-*/
 #btn-clima    { top: 360px; left: 20px; }
 #btn-notas    { top: 260px; left: 20px; }
 #btn-bemvindo { top: 60px; left: 20px; }
@@ -180,4 +178,71 @@ body{
     height: 160px;
     margin-top: -80px;
     margin-left: -80px;
+}
+
+/*calculadora*/
+.calc-card {
+    width: 250px;
+    background-color: rgba(8, 0, 26, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding-bottom: 12px;
+}
+
+#calc-screen { 
+    background-color: transparent;
+    color: rgb(248, 235, 255);
+    width: 100%;
+    padding: 10px;
+    font-size: 28px;
+    text-align: right;
+    box-sizing: border-box;
+    border: none;
+    font-weight: bold;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 0 8px;
+}
+
+.calc-buttons button {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    font-size: 16px;
+}
+
+.calc-buttons button.btn-clear {
+    color: rgb(255, 80, 80);
+    background-color: rgba(59, 48, 90, 0.35);
+}
+
+.calc-buttons button.btn-back {
+    background-color: rgba(59, 48, 90, 0.35);
+    color: rgb(255, 100, 100);
+}
+ 
+.calc-buttons button.btn-op {
+    background-color: rgba(59, 48, 90, 0.35);
+    color: rgba(220, 198, 255, 0.9);
+}
+
+.calc-buttons button.btn-num {
+    background-color: rgba(59, 48, 90, 0.35);
+    color: rgb(255, 255, 255);
+}
+
+#btn-equal {
+    color: rgb(255, 255, 255);
+    background-color: rgb(112, 44, 190);
+}
+
+.calc-buttons button:hover {
+    filter: brightness(1.2);
 }

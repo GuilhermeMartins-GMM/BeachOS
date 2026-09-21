@@ -9,18 +9,50 @@ setInterval(atualizarRelogio, 1000);
 
 atualizarRelogio();
 
-/*calculadora
+// calculadora
 const btnCalc = document.getElementById('btn-calc');
 const janelaCalc = document.getElementById('janela-calc');
 const fecharCalc = document.getElementById('fechar-calc');
+const calcScreen = document.getElementById('calc-screen');
 
 btnCalc.addEventListener('click', function() {
     janelaCalc.style.display = 'block';
 });
+
 fecharCalc.addEventListener('click', function() {
     janelaCalc.style.display = 'none';
 });
-*/
+
+tornarArrastavel(janelaCalc);
+tornarArrastavel(btnCalc);
+
+function addValor(val) {
+    if (calcScreen.value === '0' || calcScreen.value === 'Erro') {
+        calcScreen.value = val;
+    } else {
+        calcScreen.value += val;
+    }
+}
+
+function limpar() {
+    calcScreen.value = '0';
+}
+
+function apagarUltimo() {
+    if (calcScreen.value.length > 1 && calcScreen.value !== 'Erro') {
+        calcScreen.value = calcScreen.value.slice(0, -1);
+    } else {
+        calcScreen.value = '0';
+    }
+}
+
+function calcular() {
+    try {
+        calcScreen.value = eval(calcScreen.value);
+    } catch (e) {
+        calcScreen.value = 'Erro';
+    }
+}
 
 //clima
 const btnClima = document.getElementById('btn-clima');
