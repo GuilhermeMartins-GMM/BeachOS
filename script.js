@@ -35,7 +35,7 @@ fecharClima.addEventListener('click', function() {
 });
 
 async function buscarClima() {
-    const elementoCidade = document.getElementById('cidade-clima');
+    const elementoCidade = document.getElementById('cidade');
     const elementoTemp = document.getElementById('temp-clima');
 
     try {
