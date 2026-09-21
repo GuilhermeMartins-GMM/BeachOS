@@ -9,7 +9,7 @@ setInterval(atualizarRelogio, 1000);
 
 atualizarRelogio();
 
-//calculadora
+/*calculadora
 const btnCalc = document.getElementById('btn-calc');
 const janelaCalc = document.getElementById('janela-calc');
 const fecharCalc = document.getElementById('fechar-calc');
@@ -20,6 +20,7 @@ btnCalc.addEventListener('click', function() {
 fecharCalc.addEventListener('click', function() {
     janelaCalc.style.display = 'none';
 });
+*/
 
 //clima
 const btnClima = document.getElementById('btn-clima');
@@ -38,12 +39,12 @@ async function buscarClima() {
     const elementoTemp = document.getElementById('temp-clima');
 
     try {
-        const resposta = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-3.73&longitude=-38.52&current_weather=true');
+        const resposta = await fetch('https://api.open-meteo.com/v1/forecast?latitude=28.3772&longitude=-81.5707&current_weather=true');
         const dados = await resposta.json();
 
         const temperatura = dados.current_weather.temperature;
 
-        elementoCidade.innerText = "Beach (Fortaleza)";
+        elementoCidade.innerText = "Orlando";
         elementoTemp.innerText = temperatura + " °C";
     } catch (erro) {
         elementoCidade.innerText = "Error";
@@ -126,12 +127,12 @@ function tornarArrastavel(janela) {
     window.addEventListener('touchend', parar);
 }
 
-tornarArrastavel(janelaCalc);
+//tornarArrastavel(janelaCalc);
 tornarArrastavel(janelaClima);
 tornarArrastavel(janelaNotas);
 tornarArrastavel(janelaMensagem);
 
-tornarArrastavel(btnCalc);
+//tornarArrastavel(btnCalc);
 tornarArrastavel(btnClima);
 tornarArrastavel(btnNotas);
 tornarArrastavel(btnMensagem);
