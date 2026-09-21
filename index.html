@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>BeachOS</title>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -47,7 +48,8 @@
                 <button class="btn-fechar" id="fechar-clima">x</button>
             </div>
             <div class="janela-conteudo">
-                <p>Weather app</p>
+                <h3 id="cidade-clima">Loading...</h3>
+                <p id="temp-clima">-- °C</p>
             </div>
         </div>
 
@@ -57,7 +59,7 @@
                 <button class="btn-fechar" id="fechar-notas">x</button>
             </div>
             <div class="janela-conteudo">
-                <p>Notes app</p>
+                <textarea id="texto-notas" placeholder="Write here..."></textarea>
             </div>
         </div>
 

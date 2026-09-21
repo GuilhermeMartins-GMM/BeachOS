@@ -33,6 +33,26 @@ fecharClima.addEventListener('click', function() {
     janelaClima.style.display = 'none';
 });
 
+async function buscarClima() {
+    const elementoCidade = document.getElementById('cidade-clima');
+    const elementoTemp = document.getElementById('temp-clima');
+
+    try {
+        const resposta = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-3.73&longitude=-38.52&current_weather=true');
+        const dados = await resposta.json();
+
+        const temperatura = dados.current_weather.temperature;
+
+        elementoCidade.innerText = "Beach (Fortaleza)";
+        elementoTemp.innerText = temperatura + " °C";
+    } catch (erro) {
+        elementoCidade.innerText = "Error";
+        elementoTemp.innerText = "-- °C";
+    }
+}
+
+buscarClima();
+
 
 //notas
 const btnNotas = document.getElementById('btn-notas');
@@ -44,6 +64,13 @@ btnNotas.addEventListener('click', function() {
 });
 fecharNotas.addEventListener('click', function() {
     janelaNotas.style.display = 'none';
+});
+
+const campoNotas = document.getElementById('texto-notas');
+campoNotas.value = localStorage.getItem('minhas_notas');
+
+campoNotas.addEventListener('input', function() {
+    localStorage.setItem('minhas_notas', campoNotas.value);
 });
 
 //mensagem inicial
