@@ -27,7 +27,7 @@ tornarArrastavel(janelaCalc);
 tornarArrastavel(btnCalc);
 
 function addValor(val) {
-    if (calcScreen.value === '0' || calcScreen.value === 'Erro') {
+    if (calcScreen.value === '0' || calcScreen.value === 'Error') {
         calcScreen.value = val;
     } else {
         calcScreen.value += val;
@@ -39,7 +39,7 @@ function limpar() {
 }
 
 function apagarUltimo() {
-    if (calcScreen.value.length > 1 && calcScreen.value !== 'Erro') {
+    if (calcScreen.value.length > 1 && calcScreen.value !== 'Error') {
         calcScreen.value = calcScreen.value.slice(0, -1);
     } else {
         calcScreen.value = '0';
@@ -50,7 +50,7 @@ function calcular() {
     try {
         calcScreen.value = eval(calcScreen.value);
     } catch (e) {
-        calcScreen.value = 'Erro';
+        calcScreen.value = 'Error';
     }
 }
 

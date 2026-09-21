@@ -39,7 +39,7 @@ body{
 }
 
 .janela-cabeca {
-    background-color: rgba(255, 0, 85, 0.09);
+    background: none;
     padding: 8px 12px;
     display: flex;
     justify-content: flex-end;
@@ -57,7 +57,8 @@ body{
 }
 
 .btn-fechar {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(235, 0, 0, 0.8);
+    color: white;
     border: none;
     border-radius: 50%;
     width: 20px;
