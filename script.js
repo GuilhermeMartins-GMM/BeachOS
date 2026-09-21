@@ -53,6 +53,9 @@ function tornarArrastavel(janela){
     function mover(e){
         const clienteX = e.touches ? e.touches[0].clientX : e.clientX;
         const clienteY = e.touches ? e.touches[0].clientY : e.clientY;
+
+        janela.style.left = clienteX + 'px';
+        janela.style.top = clienteY + 'px';
     }
 
     function iniciar(){
@@ -62,7 +65,7 @@ function tornarArrastavel(janela){
 
     function parar(){
         window.removeEventListener('mousemove', mover);
-        window.removeEventListener('mousemove', mover);
+        window.removeEventListener('touchmove', mover);
     }
 
     cabeca.addEventListener('mousedown', iniciar);
