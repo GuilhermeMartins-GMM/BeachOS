@@ -37,7 +37,7 @@ body{
 }
 
 .janela-cabeca {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 8px 12px;
     display: flex;
     justify-content: flex-end;
@@ -52,7 +52,7 @@ body{
 
 
 .btn-fechar {
-    background-color: rgba(196, 32, 32, 0.8);
+    background-color: rgba(255, 255, 255, 0.2);
     border: none;
     border-radius: 50%;
     width: 20px;
