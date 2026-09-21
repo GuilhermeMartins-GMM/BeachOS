@@ -52,7 +52,7 @@ body{
 
 
 .btn-fechar {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     border: none;
     border-radius: 50%;
     width: 20px;
@@ -76,7 +76,9 @@ body{
     touch-action: none;
 }
 
+/*
 #btn-calc     { top: 360px; left: 20px; }
+*/
 #btn-clima    { top: 160px; left: 20px; }
 #btn-notas    { top: 260px; left: 20px; }
 #btn-bemvindo { top: 60px; left: 20px; }
