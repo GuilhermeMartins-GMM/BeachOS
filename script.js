@@ -39,12 +39,12 @@ async function buscarClima() {
     const elementoTemp = document.getElementById('temp-clima');
 
     try {
-        const resposta = await fetch('https://api.open-meteo.com/v1/forecast?latitude=28.3772&longitude=-81.5707&current_weather=true');
+        const resposta = await fetch('https://api.open-meteo.com/v1/forecast?latitude=35.6762&longitude=139.6503&current_weather=true');
         const dados = await resposta.json();
 
         const temperatura = dados.current_weather.temperature;
 
-        elementoCidade.innerText = "Orlando";
+        elementoCidade.innerText = "Tokyo (Japan)";
         elementoTemp.innerText = temperatura + " °C";
     } catch (erro) {
         elementoCidade.innerText = "Error";
