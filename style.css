@@ -106,12 +106,15 @@ body{
     width: 60%; padding: 8px; border-radius: 8px;
     border: none; outline: none; box-sizing:
     border-box; margin-bottom: 8px;
+    margin: auto; 
 }
 
 #btn-fazer-pesquisa{
     width: 60%; padding: 8px; border-radius: 6px;
     border: none; background-color: rgb(23, 145, 185); color: white;
     cursor: pointer; font-weight: bold;
+    display: block;
+    margin: 0 auto; 
 }
 
 #cidade{
@@ -120,8 +123,4 @@ body{
 
 #temp-clima{
     text-align: center
-}
-
-#janela-pesquisa, .janela-conteudo{
-    align-items: center;
 }
