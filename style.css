@@ -82,10 +82,10 @@ body{
 /*
 #btn-calc     { top: 460px; left: 20px; }
 */
-#btn-clima    { top: 160px; left: 20px; }
+#btn-clima    { top: 360px; left: 20px; }
 #btn-notas    { top: 260px; left: 20px; }
 #btn-bemvindo { top: 60px; left: 20px; }
-#btn-pesquisar {top: 360px; left: 20px}
+#btn-pesquisar {top: 160px; left: 20px}
  
 #texto-notas {
     width: 100%;
@@ -101,14 +101,14 @@ body{
 }
 
 #campo-pesquisa{
-    width: 100%; padding: 8px; border-radius: 6px;
+    width: 80%; padding: 8px; border-radius: 8px;
     border: none; outline: none; box-sizing:
     border-box; margin-bottom: 8px;
 }
 
 #btn-fazer-pesquisa{
-    width: 100%; padding: 8px; border-radius: 6px;
-    border: none; background-color: rgba(67, 0, 77, 0.9); color: white;
+    width: 50%; padding: 8px; border-radius: 6px;
+    border: none; background-color: rgb(23, 145, 185); color: white;
     cursor: pointer; font-weight: bold;
 }
 
