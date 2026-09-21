@@ -21,7 +21,6 @@ fecharCalc.addEventListener('click', function() {
     janelaCalc.style.display = 'none';
 });
 
-
 //clima
 const btnClima = document.getElementById('btn-clima');
 const janelaClima = document.getElementById('janela-clima');
