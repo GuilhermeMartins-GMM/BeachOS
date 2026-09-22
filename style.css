@@ -92,7 +92,7 @@ body{
     touch-action: none;
     transition: transform 0.2s
 }
-
+ 
 .icone:hover{
     transform: translateY(-4px);
 }
@@ -104,6 +104,7 @@ body{
 #btn-pesquisar {top: 160px; left: 20px}
 #btn-musica {top: 360px; left:20px}
 #btn-jogo { top: 260px; left: 120px;}
+#btn-dps {top: 360; left: 120px}
  
 #texto-notas {
     width: 100%;
