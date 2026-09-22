@@ -9,6 +9,16 @@ setInterval(atualizarRelogio, 1000);
 
 atualizarRelogio();
 
+//------
+const btnDps = document.getElementById('btn-dps');
+btnDps.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
+    alert("Can't you read?! It's still under development. ");
+    navigator.vibrate(200 200 500);
+});
+
 //botoes jogo
 const btnJogo = document.getElementById('btn-jogo');
 const janelaJogo = document.getElementById('janela-jogo');
