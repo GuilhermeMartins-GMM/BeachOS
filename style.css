@@ -63,7 +63,7 @@ body{
     border-radius: 50%;
     width: 20px;
     height: 20px; 
-    cursor: pointer;
+    cursor: not-allowed;
 }
 
 .icone img {
@@ -104,6 +104,7 @@ body{
     width: 60%; padding: 8px; border-radius: 8px;
     border: none; outline: none; box-sizing:
     border-box; margin-bottom: 8px;
+    text-align: center;
     display: block;
     margin: auto; 
 }
@@ -112,6 +113,7 @@ body{
     width: 60%; padding: 8px; border-radius: 6px;
     border: none; background-color: rgb(23, 145, 185); color: white;
     cursor: pointer; font-weight: bold;
+    margin-bottom: 10px;
     display: block;
     margin: 0 auto; 
 }
@@ -184,8 +186,8 @@ body{
 /*calculadora*/
 .calc-card {
     width: 250px;
-    background-color: rgba(8, 0, 26, 0.95);
-    backdrop-filter: blur(8px);
+    background-color: rgba(18, 18, 20, 0.85); 
+    backdrop-filter: blur(8px); 
     border-radius: 16px;
     padding-bottom: 12px;
 }
@@ -221,27 +223,27 @@ body{
 
 .calc-buttons button.btn-clear {
     color: rgb(255, 80, 80);
-    background-color: rgba(59, 48, 90, 0.35);
+    background-color: rgba(27, 22, 41, 0.35);
 }
 
 .calc-buttons button.btn-back {
-    background-color: rgba(59, 48, 90, 0.35);
+    background-color: rgba(27, 22, 41, 0.35);
     color: rgb(255, 100, 100);
 }
  
 .calc-buttons button.btn-op {
-    background-color: rgba(59, 48, 90, 0.35);
+    background-color: rgba(27, 22, 41, 0.35);
     color: rgba(220, 198, 255, 0.9);
 }
 
 .calc-buttons button.btn-num {
-    background-color: rgba(59, 48, 90, 0.35);
+    background-color: rgba(27, 22, 41, 0.35);
     color: rgb(255, 255, 255);
 }
 
 #btn-equal {
     color: rgb(255, 255, 255);
-    background-color: rgb(112, 44, 190);
+    background-color: rgb(190, 44, 44);
 }
 
 .calc-buttons button:hover {
