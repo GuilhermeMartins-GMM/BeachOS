@@ -9,6 +9,19 @@ setInterval(atualizarRelogio, 1000);
 
 atualizarRelogio();
 
+//musica
+const btnMusica = document.getElementById('btn-musica');
+const janelaMusica = document.getElementById('janela-musica');
+const fecharMusica = document.getElementById('fechar-musica');
+
+btnMusica.addEventListener('click', function() {
+    janelaMusica.style.display = 'block';
+});
+
+fecharMusica.addEventListener('click', function() {
+    janelaMusica.style.display = 'none';
+});
+
 // calculadora
 const btnCalc = document.getElementById('btn-calc');
 const janelaCalc = document.getElementById('janela-calc');
@@ -223,17 +236,4 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         telaCarregamento.style.display = 'none';
     }, 5500);
-});
-
-//musica
-const btnMusica = document.getElementById('btn-musica');
-const janelaMusica = document.getElementById('janela-musica');
-const fecharMusica = document.getElementById('fechar-musica');
-
-btnMusica.addEventListener('click', function() {
-    janelaMusica.style.display = 'block';
-});
-
-fecharMusica.addEventListener('click', function() {
-    janelaMusica.style.display = 'none';
 });
