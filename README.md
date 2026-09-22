@@ -14,6 +14,6 @@ An OS made by me to stardance hack club
 - Loading screen
 - Icons lift
 
-HTML - Java Script - CSS
+#### HTML - Java Script - CSS
 
 ![Site exemple](imagens/exemplo.jpg)
