@@ -16,7 +16,7 @@ btnDps.addEventListener('click', function() {
         return;
     }
     alert("Can't you read?! It's still under development. ");
-    navigator.vibrate(200 200 500);
+    navigator.vibrate(200, 200, 500);
 });
 
 //botoes jogo
