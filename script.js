@@ -295,19 +295,19 @@ window.addEventListener('load', () => {
 
     setTimeout(() => {
         containerBolinhas.classList.add('juntar');
-    }, 1500);
+    }, 1000);
 
     setTimeout(() => {
         telaCarregamento.classList.add('escurecer');
-    }, 3200);
+    }, 3000);
 
     setTimeout(() => {
         telaCarregamento.style.opacity = '0';
-    }, 4500);
+    }, 4200);
 
     setTimeout(() => {
         telaCarregamento.style.display = 'none';
-    }, 5500);
+    }, 5200);
 });
 
 //jogo
