@@ -31,7 +31,7 @@
         </div>
 
         <div class="icone" id="btn-notas">
-            <img src="imagens/clima.jpg" width="64" height="64">
+            <img src="imagens/notas.jpg" width="64" height="64">
             <br> Notes
         </div>
 
@@ -43,6 +43,11 @@
         <div class="icone" id="btn-pesquisar">
             <img src="imagens/pesquisar.png" width="64" height="64">
             <br>Search
+        </div>
+
+        <div class="icone" id="btn-musica">
+            <img src="imagens/musica.jpg" width="64" height="64">
+            <br>Music
         </div>
 
         <div id="janela-calc" class="janela calc-card">
@@ -118,6 +123,25 @@
             <div class="janela-conteudo">
                 <input type="text" id="campo-pesquisa" placeholder="Search here">
                 <button id="btn-fazer-pesquisa">Search</button>
+            </div>
+        </div>
+
+        <div class="janela" id="janela-musica">
+            <div class="janela-cabeca">
+               <span>Music Player</span>
+                <button class="btn-fechar" id="fechar-musica"> </button>
+            </div>
+            <div class="janela-conteudo">
+                <iframe 
+                    id="player-musica"
+                    src="https://open.spotify.com/embed/playlist/1xy0tJzbll2FdnEadNyZq4?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                > 
+                </iframe>
             </div>
         </div>
 

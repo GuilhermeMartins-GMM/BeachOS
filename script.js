@@ -194,12 +194,14 @@ tornarArrastavel(janelaClima);
 tornarArrastavel(janelaNotas);
 tornarArrastavel(janelaMensagem);
 tornarArrastavel(janelaPesquisa);
+tornarArrastavel(janelaMusica);
 
 //tornarArrastavel(btnCalc);
 tornarArrastavel(btnClima);
 tornarArrastavel(btnNotas);
 tornarArrastavel(btnMensagem);
 tornarArrastavel(btnPesquisar);
+tornarArrastavel(btnMusica);
 
 // tela de carregamento
 window.addEventListener('load', () => {
@@ -221,4 +223,17 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         telaCarregamento.style.display = 'none';
     }, 5500);
+});
+
+//musica
+const btnMusica = document.getElementById('btn-musica');
+const janelaMusica = document.getElementById('janela-musica');
+const fecharMusica = document.getElementById('fechar-musica');
+
+btnMusica.addEventListener('click', function() {
+    janelaMusica.style.display = 'block';
+});
+
+fecharMusica.addEventListener('click', function() {
+    janelaMusica.style.display = 'none';
 });
