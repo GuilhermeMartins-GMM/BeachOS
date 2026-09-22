@@ -9,6 +9,22 @@ setInterval(atualizarRelogio, 1000);
 
 atualizarRelogio();
 
+//botoes jogo
+const btnJogo = document.getElementById('btn-jogo');
+const janelaJogo = document.getElementById('janela-jogo');
+const fecharJogo = document.getElementById('fechar-jogo');
+
+btnJogo.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
+    janelaJogo.style.display = 'block';
+});
+
+fecharJogo.addEventListener('click', function() {
+    janelaJogo.style.display = 'none';
+});
+
 //musica
 const btnMusica = document.getElementById('btn-musica');
 const janelaMusica = document.getElementById('janela-musica');
@@ -262,6 +278,7 @@ tornarArrastavel(janelaNotas);
 tornarArrastavel(janelaMensagem);
 tornarArrastavel(janelaPesquisa);
 tornarArrastavel(janelaMusica);
+tornarArrastavel(janelaJogo);
 
 //tornarArrastavel(btnCalc); 
 tornarArrastavel(btnClima);
@@ -269,6 +286,7 @@ tornarArrastavel(btnNotas);
 tornarArrastavel(btnMensagem);
 tornarArrastavel(btnPesquisar);
 tornarArrastavel(btnMusica);
+tornarArrastavel(btnJogo);
 
 // tela de carregamento
 window.addEventListener('load', () => {

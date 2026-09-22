@@ -156,7 +156,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 1s ease, opacity 1s ease-out; 
+    transition: background-color 1s ease, opacity 1s ease-in-out; 
 }
 
 #tela-carregamento.escurecer {
