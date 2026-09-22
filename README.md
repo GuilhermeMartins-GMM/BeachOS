@@ -16,4 +16,4 @@ An OS made by me to stardance hack club
 
 HTML - Java Script - CSS
 
-![Site exemple](imagens/.exemplo.jpg)
+![Site exemple](imagens/exemplo.jpg)
