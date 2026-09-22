@@ -44,12 +44,20 @@ body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-radius: 0 0 8px 8px
+    border-radius: 0 0 8px 8px;
+    position: relative
 }
 
 .janela-cabeca > :first-child {
-    margin-right: auto;
-    margin-left: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.janela-conteudo {
+    padding: 16px;
+    box-sizing: border-box;
 }
 
 #janela-clima, #janela-bemvindo{
@@ -61,8 +69,8 @@ body{
     color: white;
     border: none;
     border-radius: 50%;
-    width: 15px;
-    height: 15px; 
+    width: 10px;
+    height: 10px; 
     cursor: not-allowed;
 }
 
@@ -81,12 +89,12 @@ body{
     touch-action: none;
 }
 
-#btn-calc     { top: 460px; left: 20px; }
-#btn-clima    { top: 360px; left: 20px; }
+#btn-calc     { top: 560px; left: 20px; }
+#btn-clima    { top: 460px; left: 20px; }
 #btn-notas    { top: 260px; left: 20px; }
 #btn-bemvindo { top: 60px; left: 20px; }
 #btn-pesquisar {top: 160px; left: 20px}
-#btn-musica {top: 560px; left:20px}
+#btn-musica {top: 360px; left:20px}
  
 #texto-notas {
     width: 100%;
@@ -264,4 +272,28 @@ body{
 
 #player-musica {
     border-radius: 12px;
+}
+
+/*clima atualizado*/
+#input-cidade {
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+#btn-buscar-clima {
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(23, 145, 185);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 15px;
 }

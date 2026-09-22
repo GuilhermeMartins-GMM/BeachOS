@@ -79,25 +79,56 @@ fecharClima.addEventListener('click', function() {
     janelaClima.style.display = 'none';
 });
 
-async function buscarClima() {
+async function buscarClima(nomeCidade) {
     const elementoCidade = document.getElementById('cidade');
     const elementoTemp = document.getElementById('temp-clima');
 
+    elementoCidade.innerText = "Loading...";
+    elementoTemp.innerText = "-- °C";
+
     try {
-        const resposta = await fetch('https://api.open-meteo.com/v1/forecast?latitude=35.6762&longitude=139.6503&current_weather=true');
-        const dados = await resposta.json();
+        const geoResposta = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(nomeCidade)}&count=1`);
+        const geoDados = await geoResposta.json();
 
-        const temperatura = dados.current_weather.temperature;
+        if (!geoDados.results) {
+            elementoCidade.innerText = "Not found";
+            elementoTemp.innerText = "-- °C";
+            return;
+        }
 
-        elementoCidade.innerText = "Tokyo (Japan)";
-        elementoTemp.innerText = temperatura + " °C";
+        const lat = geoDados.results[0].latitude;
+        const lon = geoDados.results[0].longitude;
+        const nomeReal = geoDados.results[0].name;
+
+        const climaResposta = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+        const climaDados = await climaResposta.json();
+
+        elementoCidade.innerText = nomeReal;
+        elementoTemp.innerText = climaDados.current_weather.temperature + " °C";
     } catch (erro) {
         elementoCidade.innerText = "Error";
         elementoTemp.innerText = "-- °C";
     }
 }
 
-buscarClima();
+document.getElementById('btn-buscar-clima').addEventListener('click', () => {
+    const cidadeDigitada = document.getElementById('input-cidade').value.trim();
+    if (cidadeDigitada == '') {
+        buscarClima(Tokyo);
+    }
+    else{
+        buscarClima(cidadeDigitada)
+    }
+});
+
+document.getElementById('input-cidade').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        const cidadeDigitada = this.value.trim();
+        if (cidadeDigitada !== '') buscarClima(cidadeDigitada);
+    }
+});
+
+buscarClima("Tokyo");
 
 
 //notas
