@@ -2,14 +2,16 @@
 
 An OS made by me to stardance hack club
 
-This is only the first version, in the final it will have music and more;
-
 ## Features
-- A weather app
-- A notes app
-- A search app
-- A calculator
+- Weather of any city you want
+- Simple apps: calculator, notes and search
+- A music player (with a playlist that I like)
+
+### UI details
+- Draggable windows and icons
+- Glass-style windows
+- Loading screen
 
 HTML - Java Script - CSS
 
-
+![Site exemple](.imagens/exemplo.jpg)

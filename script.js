@@ -15,6 +15,9 @@ const janelaMusica = document.getElementById('janela-musica');
 const fecharMusica = document.getElementById('fechar-musica');
 
 btnMusica.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
     janelaMusica.style.display = 'block';
 });
 
@@ -29,6 +32,9 @@ const fecharCalc = document.getElementById('fechar-calc');
 const calcScreen = document.getElementById('calc-screen');
 
 btnCalc.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
     janelaCalc.style.display = 'block';
 });
 
@@ -62,7 +68,7 @@ function apagarUltimo() {
 function calcular() {
     try {
         calcScreen.value = eval(calcScreen.value);
-    } catch (e) {
+    } catch{
         calcScreen.value = 'Error';
     }
 }
@@ -73,6 +79,9 @@ const janelaClima = document.getElementById('janela-clima');
 const fecharClima = document.getElementById('fechar-clima');
 
 btnClima.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
     janelaClima.style.display = 'block';
 });
 fecharClima.addEventListener('click', function() {
@@ -114,7 +123,7 @@ async function buscarClima(nomeCidade) {
 document.getElementById('btn-buscar-clima').addEventListener('click', () => {
     const cidadeDigitada = document.getElementById('input-cidade').value.trim();
     if (cidadeDigitada == '') {
-        buscarClima(Tokyo);
+        buscarClima("Tokyo");
     }
     else{
         buscarClima(cidadeDigitada)
@@ -137,6 +146,9 @@ const janelaNotas = document.getElementById('janela-notas');
 const fecharNotas = document.getElementById('fechar-notas');
 
 btnNotas.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
     janelaNotas.style.display = 'block';
 });
 fecharNotas.addEventListener('click', function() {
@@ -156,6 +168,9 @@ const janelaMensagem = document.getElementById('janela-bemvindo');
 const fecharMensagem = document.getElementById('fechar-bemvindo');
 
 btnMensagem.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
     janelaMensagem.style.display = 'block';
 });
 fecharMensagem.addEventListener('click', function() {
@@ -171,6 +186,9 @@ const campoPesquisa = document.getElementById('campo-pesquisa');
 const btnFazerPesquisa = document.getElementById('btn-fazer-pesquisa');
 
 btnPesquisar.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
     janelaPesquisa.style.display = 'block';
 });
 fecharPesquisa.addEventListener('click', function() {
@@ -180,7 +198,7 @@ fecharPesquisa.addEventListener('click', function() {
 function executarPesquisa() {
     const termo = campoPesquisa.value.trim();
     if (termo !== '') {
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(termo)}`, '_blank');
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(termo)}`);
     }
 }
 
@@ -193,6 +211,9 @@ campoPesquisa.addEventListener('keypress', function(e) {
 });
 
 //arrastar
+
+let arrastou = false;
+
 function tornarArrastavel(janela) {
     const cabeca = janela.querySelector('.janela-cabeca') || janela;
     
@@ -204,6 +225,7 @@ function tornarArrastavel(janela) {
     }
 
     function mover(e) {
+        arrastou=true;
         const pos = getPos(e);
         janela.style.left = (pos.clientX - offsetX) + 'px';
         janela.style.top = (pos.clientY - offsetY) + 'px';
@@ -211,6 +233,7 @@ function tornarArrastavel(janela) {
 
     function iniciar(e) {
         const pos = getPos(e);
+        arrastou=false;
         
         offsetX = pos.clientX - janela.offsetLeft;
         offsetY = pos.clientY - janela.offsetTop;
@@ -240,7 +263,7 @@ tornarArrastavel(janelaMensagem);
 tornarArrastavel(janelaPesquisa);
 tornarArrastavel(janelaMusica);
 
-//tornarArrastavel(btnCalc);
+//tornarArrastavel(btnCalc); 
 tornarArrastavel(btnClima);
 tornarArrastavel(btnNotas);
 tornarArrastavel(btnMensagem);
@@ -254,7 +277,7 @@ window.addEventListener('load', () => {
 
     setTimeout(() => {
         containerBolinhas.classList.add('juntar');
-    }, 2000);
+    }, 1500);
 
     setTimeout(() => {
         telaCarregamento.classList.add('escurecer');
@@ -268,3 +291,50 @@ window.addEventListener('load', () => {
         telaCarregamento.style.display = 'none';
     }, 5500);
 });
+
+//jogo
+let number;
+let attempts;
+
+function newG() {
+    number = Math.floor(Math.random() * 1000) + 1;
+    attempts = 0;
+    document.getElementById("result").textContent = "";
+    document.getElementById("attempts").textContent = "";
+    document.getElementById("guess").value = "";
+    document.getElementById("guess").disabled = false;
+    document.getElementById("guessButton").style.display = "inline-block";
+    document.getElementById("newGameButton").style.display = "none";
+}
+
+function check() {
+    let guess = Number(document.getElementById("guess").value);
+
+    if (guess < 1 || guess > 1000) {
+        document.getElementById("result").textContent = "Serious?";
+        return;
+    }
+
+    attempts = attempts + 1;
+
+    if (guess < number) {
+        document.getElementById("result").textContent = "Higher";
+    } else if (guess > number) {
+        document.getElementById("result").textContent = "Lower";
+    } else {
+        document.getElementById("result").textContent = "Correct!!!";
+        document.getElementById("attempts").textContent = "Attempts: " + attempts;
+
+        document.getElementById("guessButton").style.display = "none";
+        document.getElementById("newGameButton").style.display = "inline-block";
+        document.getElementById("guess").disabled = true;
+    }
+}
+
+document.getElementById("guess").onkeydown = function(event) {
+    if (event.key === "Enter") {
+        check();
+    }
+};
+
+newG();
