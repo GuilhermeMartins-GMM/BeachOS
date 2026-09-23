@@ -29,6 +29,7 @@ btnJogo.addEventListener('click', function() {
         return;
     }
     janelaJogo.style.display = 'block';
+    redimensionarCanvas();
 });
 
 fecharJogo.addEventListener('click', function() {
@@ -434,9 +435,9 @@ canvasPintar.addEventListener('mousedown', (e) => {
 canvasPintar.addEventListener('mousemove', (e) => {
     if (desenhando) {
         ctxPintar.lineTo(e.offsetX, e.offsetY);
-        ctxPintar.strokeStyle = '#bc002d'; // Cor do pincel
-        ctxPintar.lineWidth = 3;           // Grossura da linha
-        ctxPintar.lineCap = 'round';       // Ponta arredondada
+        ctxPintar.strokeStyle = '#bc002d';
+        ctxPintar.lineWidth = 3;
+        ctxPintar.lineCap = 'round';
         ctxPintar.stroke();
     }
 });

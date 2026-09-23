@@ -105,7 +105,7 @@ body{
 #btn-musica {top: 360px; left:20px}
 #btn-jogo { top: 260px; left: 120px;}
 #btn-pintar {top: 360px; left: 120px}
-#btn-piadas{top: 460px; left:20px}
+#btn-piada{top: 460px; left:20px}
 #btn-dps {top: 460px; left: 120px;}
  
 #texto-notas {
@@ -348,13 +348,12 @@ body{
     width: 100%;
     min-height: 80px;
     padding: 12px;
-    border-radius: 12px;
+    background: none;
     border: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #5d00ff;
-    font-size: 13px;
+    color: rgba(225, 212, 255, 0.8);
+    font-weight: bold;
+    font-size: 15px;
     cursor: pointer;
-    text-align: left;
     box-sizing: border-box;
 }
 
