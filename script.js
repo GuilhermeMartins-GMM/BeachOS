@@ -271,12 +271,11 @@ campoPesquisa.addEventListener('keypress', function(e) {
 let arrastou = false; let zIndexAtual=10;
 
 function tornarArrastavel(janela) {
-    const cabeca = janela.querySelector('.janela-cabeca') || janela;
-    
+        
     let offsetX = 0;
     let offsetY = 0;
 
-    function getPos(e) {
+    function getPos(e) { 
         return e.touches ? e.touches[0] : e;
     }
 
@@ -315,10 +314,9 @@ function tornarArrastavel(janela) {
         arrastou=false;
     }
 
-    if (cabeca) {
-        cabeca.addEventListener('mousedown', iniciar);
-        cabeca.addEventListener('touchstart', iniciar);
-    }
+
+    cabeca.addEventListener('mousedown', iniciar);
+    cabeca.addEventListener('touchstart', iniciar);
 
     window.addEventListener('mouseup', parar);
     window.addEventListener('touchend', parar);
