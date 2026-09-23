@@ -7,7 +7,7 @@ function atualizarRelogio(){
 
 setInterval(atualizarRelogio, 1000);
 
-atualizarRelogio();
+atualizarRelogio(); 
 
 //------
 const btnDps = document.getElementById('btn-dps');
@@ -33,6 +33,38 @@ btnJogo.addEventListener('click', function() {
 
 fecharJogo.addEventListener('click', function() {
     janelaJogo.style.display = 'none';
+});
+
+//botoes jogo
+const btnPintar = document.getElementById('btn-pintar');
+const janelaPintar = document.getElementById('janela-pintar');
+const fecharPintar = document.getElementById('fechar-pintar');
+
+btnPintar.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
+    janelaPintar.style.display = 'block';
+});
+
+fecharPintar.addEventListener('click', function() {
+    janelaPintar.style.display = 'none';
+});
+
+//piada
+const btnPiada = document.getElementById('btn-piada');
+const janelaPiada = document.getElementById('janela-piada');
+const fecharPiada = document.getElementById('fechar-piada');
+
+btnPiada.addEventListener('click', function() {
+    if(arrastou){
+        return;
+    }
+    janelaPiada.style.display = 'block';
+});
+
+fecharPiada.addEventListener('click', function() {
+    janelaPiada.style.display = 'none';
 });
 
 //musica
@@ -67,9 +99,6 @@ btnCalc.addEventListener('click', function() {
 fecharCalc.addEventListener('click', function() {
     janelaCalc.style.display = 'none';
 });
-
-tornarArrastavel(janelaCalc);
-tornarArrastavel(btnCalc);
 
 function addValor(val) {
     if (calcScreen.value === '0' || calcScreen.value === 'Error') {
@@ -238,7 +267,7 @@ campoPesquisa.addEventListener('keypress', function(e) {
 
 //arrastar
 
-let arrastou = false;
+let arrastou = false; let zIndexAtual=10;
 
 function tornarArrastavel(janela) {
     const cabeca = janela.querySelector('.janela-cabeca') || janela;
@@ -267,6 +296,9 @@ function tornarArrastavel(janela) {
     function iniciar(e) {
         const pos = getPos(e);
         arrastou=false;
+
+        zIndexAtual++;
+        janela.style.zIndex = zIndexAtual;
         
         offsetX = pos.clientX - janela.offsetLeft;
         offsetY = pos.clientY - janela.offsetTop;
@@ -278,6 +310,8 @@ function tornarArrastavel(janela) {
     function parar() {
         window.removeEventListener('mousemove', mover);
         window.removeEventListener('touchmove', mover);
+
+        arrastou=false;
     }
 
     if (cabeca) {
@@ -289,21 +323,25 @@ function tornarArrastavel(janela) {
     window.addEventListener('touchend', parar);
 }
 
-//tornarArrastavel(janelaCalc);
+tornarArrastavel(janelaCalc);
 tornarArrastavel(janelaClima);
 tornarArrastavel(janelaNotas);
 tornarArrastavel(janelaMensagem);
 tornarArrastavel(janelaPesquisa);
 tornarArrastavel(janelaMusica);
 tornarArrastavel(janelaJogo);
+tornarArrastavel(janelaPintar);
+tornarArrastavel(janelaPiada);
 
-//tornarArrastavel(btnCalc); 
+tornarArrastavel(btnCalc); 
 tornarArrastavel(btnClima);
 tornarArrastavel(btnNotas);
 tornarArrastavel(btnMensagem);
 tornarArrastavel(btnPesquisar);
 tornarArrastavel(btnMusica);
 tornarArrastavel(btnJogo);
+tornarArrastavel(btnPintar);
+tornarArrastavel(btnPiada);
 
 // tela de carregamento
 window.addEventListener('load', () => {
@@ -373,3 +411,58 @@ document.getElementById("guess").onkeydown = function(event) {
 };
 
 newG();
+
+//pintar
+const canvasPintar = document.getElementById('canvas-pintar');
+const ctxPintar = canvasPintar.getContext('2d');
+const btnLimparPintar = document.getElementById('btn-limpar-pintar');
+let desenhando = false;
+
+function redimensionarCanvas() {
+    canvasPintar.width = canvasPintar.offsetWidth;
+    canvasPintar.height = canvasPintar.offsetHeight;
+}
+
+redimensionarCanvas();
+
+canvasPintar.addEventListener('mousedown', (e) => {
+    desenhando = true;
+    ctxPintar.beginPath();
+    ctxPintar.moveTo(e.offsetX, e.offsetY);
+});
+
+canvasPintar.addEventListener('mousemove', (e) => {
+    if (desenhando) {
+        ctxPintar.lineTo(e.offsetX, e.offsetY);
+        ctxPintar.strokeStyle = '#bc002d'; // Cor do pincel
+        ctxPintar.lineWidth = 3;           // Grossura da linha
+        ctxPintar.lineCap = 'round';       // Ponta arredondada
+        ctxPintar.stroke();
+    }
+});
+
+canvasPintar.addEventListener('mouseup', () => desenhando = false);
+canvasPintar.addEventListener('mouseleave', () => desenhando = false);
+
+btnLimparPintar.addEventListener('click', () => {
+    ctxPintar.clearRect(0, 0, canvasPintar.width, canvasPintar.height);
+});
+
+//piadas
+const btnGerarPiada = document.getElementById('btn-gerar-piada');
+const frasesDev = [
+    "Click to read a joke",
+    "What do you call cheese that isn’t yours? Nacho cheese.",
+    "There are 10 types of people: those who understand binary, and those who don't.",
+    "What do you call fake spaghetti? An impasta.",
+    "Did you hear about the worst zoo in the world? It only has one dog. It's a real shih tzu.",
+    "Ctrl + Z is the greatest invention in human history.",
+    "Why should you knock on your refrigerator door before opening it? There may be salad dressing in there."
+];
+
+btnGerarPiada.innerText = frasesDev[0];
+
+btnGerarPiada.addEventListener('click', () => {
+    const sorteio = frasesDev[Math.floor(Math.random() * frasesDev.length)];
+    btnGerarPiada.innerText = sorteio;
+});

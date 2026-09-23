@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/png" href="imagens/favicon.png">
     </head>
-    <body>
+    <body> 
 
         <div id="tela-carregamento">
             <div class="container-bolinhas">
@@ -59,6 +59,15 @@
         <div class="icone" id="btn-dps">
             <img src="imagens/dps.png" width="64" height="64">
             <br>Don't
+        </div>
+
+        <div class="icone" id="btn-pintar">
+            <img src="imagens/pintar.png" width="64" height="64">
+            <br>Paint
+        </div>
+
+        <div class="icone" id="btn-piada">
+            <img src="imagens/piada.jpg" width="64" height="64">
         </div>
 
         <div id="janela-calc" class="janela calc-card">
@@ -172,6 +181,27 @@
                     </div>
                     <p id="result"></p>
                     <p id="attempts"></p>
+            </div>
+        </div>
+
+        <div class="janela" id="janela-pintar">
+            <div class="janela-cabeca">
+                <span>Paint</span>
+                <button class="btn-fechar" id="fechar-pintar"></button>
+            </div>
+            <div class="janela-conteudo">
+                <canvas id="canvas-pintar"></canvas>
+                <button id="btn-limpar-pintar">Clear</button>
+            </div>
+        </div>
+
+        <div class="janela" id="janela-piada"> 
+            <div class="janela-cabeca">
+                <span>Jokes</span>
+                <button class="btn-fechar" id="fechar-piada"></button>
+            </div>
+            <div class="janela-conteudo">
+                <button id="btn-gerar-piada"></button>
             </div>
         </div>
 
