@@ -253,8 +253,15 @@ function tornarArrastavel(janela) {
     function mover(e) {
         arrastou=true;
         const pos = getPos(e);
-        janela.style.left = (pos.clientX - offsetX) + 'px';
-        janela.style.top = (pos.clientY - offsetY) + 'px';
+
+        const x = Math.min( pos.clientX - offsetX,
+        window.innerWidth - janela.offsetWidth );
+
+        const y = Math.min( pos.clientY - offsetY,
+        window.innerHeight - janela.offsetHeight );
+
+        janela.style.left = x + 'px';
+        janela.style.top = y + 'px'; 
     }
 
     function iniciar(e) {
