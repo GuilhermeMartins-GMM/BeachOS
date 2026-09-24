@@ -265,7 +265,7 @@ campoPesquisa.addEventListener('keypress', function(e) {
 
 //arrastar
 
-let arrastou = false; let zIndexAtual=10;
+let arrastou = false; let zIndexAtual=100;
 
 function tornarArrastavel(janela) {
     const cabeca = janela.querySelector('.janela-cabeca') || janela;
@@ -433,8 +433,8 @@ canvasPintar.addEventListener('pointermove', function(e) {
     if (!pintando) return;
 
     ctxPintar.lineTo(e.offsetX, e.offsetY);
-    ctxPintar.strokeStyle = '#bc002d';
-    ctxPintar.lineWidth = 3;
+    ctxPintar.strokeStyle = 'rgb(92, 63, 255)';
+    ctxPintar.lineWidth = 2;
     ctxPintar.lineCap = 'round';
     ctxPintar.stroke();
 });

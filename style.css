@@ -27,6 +27,7 @@ body{
 }
 
 .janela {
+    z-index: 100;
     display: none;
     position: absolute;
     top: 100px;
@@ -365,6 +366,7 @@ body{
     border-radius: 12px;
     cursor: crosshair;
     touch-action: none;
+    margin-bottom: 5px
 }
 
 
