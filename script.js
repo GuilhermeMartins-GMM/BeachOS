@@ -299,12 +299,12 @@ function tornarArrastavel(janela) {
             if (naZonaX && naZonaY) {
                 if (!timerDeletar) {
                     
-                    janela.style.filter = "drop-shadow(0px 0px 10px rgba(255,0,0,0.8))";
+                    janela.style.filter = "drop-shadow(0px 0px 20px rgba(255,0,0,0.8))";
 
                     timerDeletar = setTimeout(() => {
                         janela.style.display = 'none'; 
                         parar();
-                    }, 2000);
+                    }, 1500);
                 }
             } else {
                 if (timerDeletar) {
