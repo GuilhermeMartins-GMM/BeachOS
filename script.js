@@ -413,46 +413,61 @@ document.getElementById("guess").onkeydown = function(event) {
 
 newG();
 
-//pintar
 const canvasPintar = document.getElementById('canvas-pintar');
 const ctxPintar = canvasPintar.getContext('2d');
 const btnLimparPintar = document.getElementById('btn-limpar-pintar');
+
 let desenhando = false;
 
-function redimensionarCanvas() {
-    canvasPintar.width = canvasPintar.offsetWidth;
-    canvasPintar.height = canvasPintar.offsetHeight;
+function configurarCanvas() {
+    const rect = canvasPintar.getBoundingClientRect();
+
+    canvasPintar.width = rect.width;
+    canvasPintar.height = rect.height;
 }
 
-redimensionarCanvas();
+configurarCanvas();
 
 canvasPintar.addEventListener('mousedown', (e) => {
     desenhando = true;
+
     ctxPintar.beginPath();
     ctxPintar.moveTo(e.offsetX, e.offsetY);
 });
 
 canvasPintar.addEventListener('mousemove', (e) => {
-    if (desenhando) {
-        ctxPintar.lineTo(e.offsetX, e.offsetY);
-        ctxPintar.strokeStyle = '#bc002d';
-        ctxPintar.lineWidth = 3;
-        ctxPintar.lineCap = 'round';
-        ctxPintar.stroke();
-    }
+    if (!desenhando) return;
+
+    ctxPintar.lineTo(e.offsetX, e.offsetY);
+
+    ctxPintar.strokeStyle = '#bc002d';
+    ctxPintar.lineWidth = 3;
+    ctxPintar.lineCap = 'round';
+    ctxPintar.lineJoin = 'round';
+
+    ctxPintar.stroke();
 });
 
-canvasPintar.addEventListener('mouseup', () => desenhando = false);
-canvasPintar.addEventListener('mouseleave', () => desenhando = false);
+canvasPintar.addEventListener('mouseup', () => {
+    desenhando = false;
+});
+
+canvasPintar.addEventListener('mouseleave', () => {
+    desenhando = false;
+});
 
 btnLimparPintar.addEventListener('click', () => {
-    ctxPintar.clearRect(0, 0, canvasPintar.width, canvasPintar.height);
+    ctxPintar.clearRect(
+        0,
+        0,
+        canvasPintar.width,
+        canvasPintar.height
+    );
 });
 
 //piadas
 const btnGerarPiada = document.getElementById('btn-gerar-piada');
-const frasesDev = [
-    "Click to read a joke",
+const frases = [
     "What do you call cheese that isn’t yours? Nacho cheese.",
     "There are 10 types of people: those who understand binary, and those who don't.",
     "What do you call fake spaghetti? An impasta.",
@@ -461,9 +476,9 @@ const frasesDev = [
     "Why should you knock on your refrigerator door before opening it? There may be salad dressing in there."
 ];
 
-btnGerarPiada.innerText = frasesDev[0];
+btnGerarPiada.innerText = "Click to read a joke";
 
 btnGerarPiada.addEventListener('click', () => {
-    const sorteio = frasesDev[Math.floor(Math.random() * frasesDev.length)];
+    const sorteio = frases[Math.floor(Math.random() * frases.length)];
     btnGerarPiada.innerText = sorteio;
 });
