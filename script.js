@@ -25,28 +25,25 @@ const janelaJogo = document.getElementById('janela-jogo');
 const fecharJogo = document.getElementById('fechar-jogo');
 
 btnJogo.addEventListener('click', function() {
-    if(arrastou){
-        return;
-    }
+    if(arrastou){return;}
     janelaJogo.style.display = 'block';
-    redimensionarCanvas();
 });
 
 fecharJogo.addEventListener('click', function() {
     janelaJogo.style.display = 'none';
 });
 
-//botoes jogo
+//botoes pintar
 const btnPintar = document.getElementById('btn-pintar');
 const janelaPintar = document.getElementById('janela-pintar');
 const fecharPintar = document.getElementById('fechar-pintar');
 
 btnPintar.addEventListener('click', function() {
-    if(arrastou){
-        return;
-    }
+    if(arrastou) return;
     janelaPintar.style.display = 'block';
+    setTimeout(function() {ajustarCanvas();}, 50);
 });
+
 
 fecharPintar.addEventListener('click', function() {
     janelaPintar.style.display = 'none';
@@ -413,56 +410,47 @@ document.getElementById("guess").onkeydown = function(event) {
 
 newG();
 
+//paint
 const canvasPintar = document.getElementById('canvas-pintar');
 const ctxPintar = canvasPintar.getContext('2d');
 const btnLimparPintar = document.getElementById('btn-limpar-pintar');
 
-let desenhando = false;
+let pintando = false;
 
-function configurarCanvas() {
-    const rect = canvasPintar.getBoundingClientRect();
-
-    canvasPintar.width = rect.width;
-    canvasPintar.height = rect.height;
+function ajustarCanvas() {
+    canvasPintar.width = canvasPintar.clientWidth;
+    canvasPintar.height = canvasPintar.clientHeight;
 }
 
-configurarCanvas();
-
-canvasPintar.addEventListener('mousedown', (e) => {
-    desenhando = true;
+canvasPintar.addEventListener('pointerdown', function(e) {
+    pintando = true;
 
     ctxPintar.beginPath();
     ctxPintar.moveTo(e.offsetX, e.offsetY);
 });
 
-canvasPintar.addEventListener('mousemove', (e) => {
-    if (!desenhando) return;
+canvasPintar.addEventListener('pointermove', function(e) {
+    if (!pintando) return;
 
     ctxPintar.lineTo(e.offsetX, e.offsetY);
-
     ctxPintar.strokeStyle = '#bc002d';
     ctxPintar.lineWidth = 3;
     ctxPintar.lineCap = 'round';
-    ctxPintar.lineJoin = 'round';
-
     ctxPintar.stroke();
 });
 
-canvasPintar.addEventListener('mouseup', () => {
-    desenhando = false;
+canvasPintar.addEventListener('pointerup', function() {
+    pintando = false;
 });
 
-canvasPintar.addEventListener('mouseleave', () => {
-    desenhando = false;
+canvasPintar.addEventListener('pointercancel', function() {
+    pintando = false;
 });
 
-btnLimparPintar.addEventListener('click', () => {
-    ctxPintar.clearRect(
-        0,
-        0,
+btnLimparPintar.addEventListener('click', function() {
+    ctxPintar.clearRect( 0,0,
         canvasPintar.width,
-        canvasPintar.height
-    );
+        canvasPintar.height );
 });
 
 //piadas

@@ -3,6 +3,7 @@
 An OS made by me to stardance hack club
 
 ## Features
+- Paint and a jokes app
 - Weather of any city you want
 - A little game: guess-the-number
 - Simple apps: calculator, notes and search
