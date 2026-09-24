@@ -434,7 +434,7 @@ canvasPintar.addEventListener('pointermove', function(e) {
 
     ctxPintar.lineTo(e.offsetX, e.offsetY);
     ctxPintar.strokeStyle = 'rgb(92, 63, 255)';
-    ctxPintar.lineWidth = 2;
+    ctxPintar.lineWidth = 1;
     ctxPintar.lineCap = 'round';
     ctxPintar.stroke();
 });
