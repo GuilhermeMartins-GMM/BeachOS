@@ -373,6 +373,7 @@ tornarArrastavel(btnMusica);
 tornarArrastavel(btnJogo);
 tornarArrastavel(btnPintar);
 tornarArrastavel(btnPiada);
+tornarArrastavel(btnDps);
 
 // tela de carregamento
 window.addEventListener('load', () => {
