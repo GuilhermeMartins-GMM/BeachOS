@@ -264,14 +264,16 @@ campoPesquisa.addEventListener('keypress', function(e) {
 });
 
 //arrastar
-
 let arrastou = false; let zIndexAtual=100;
 
 function tornarArrastavel(janela) {
     const cabeca = janela.querySelector('.janela-cabeca') || janela;
     
+    const ehIcone = janela.classList.contains('icone'); 
+    
     let offsetX = 0;
     let offsetY = 0;
+    let timerDeletar = null;
 
     function getPos(e) { 
         return e.touches ? e.touches[0] : e;
@@ -281,14 +283,38 @@ function tornarArrastavel(janela) {
         arrastou=true;
         const pos = getPos(e);
 
-        const x = Math.min( pos.clientX - offsetX,
-        window.innerWidth - janela.offsetWidth );
-
-        const y = Math.min( pos.clientY - offsetY,
-        window.innerHeight - janela.offsetHeight );
+        const x = Math.min( pos.clientX - offsetX, window.innerWidth - janela.offsetWidth );
+        const y = Math.min( pos.clientY - offsetY, window.innerHeight - janela.offsetHeight );
 
         janela.style.left = x + 'px';
         janela.style.top = y + 'px'; 
+
+        if (ehIcone) {
+            const meioTelaX = window.innerWidth / 2;
+            const fimTelaY = window.innerHeight;
+
+            const naZonaX = pos.clientX > meioTelaX - 100 && pos.clientX < meioTelaX + 100;
+            const naZonaY = pos.clientY > fimTelaY - 150;
+
+            if (naZonaX && naZonaY) {
+                if (!timerDeletar) {
+                    
+                    janela.style.filter = "drop-shadow(0px 0px 10px rgba(255,0,0,0.8))";
+
+                    timerDeletar = setTimeout(() => {
+                        janela.style.display = 'none'; 
+                        parar();
+                    }, 2000);
+                }
+            } else {
+                if (timerDeletar) {
+                    clearTimeout(timerDeletar);
+                    timerDeletar = null;
+                    janela.style.filter = "none";
+                    janela.style.opacity = "1";
+                }
+            }
+        }
     }
 
     function iniciar(e) {
@@ -310,6 +336,13 @@ function tornarArrastavel(janela) {
         window.removeEventListener('touchmove', mover);
 
         arrastou=false;
+
+        if (timerDeletar) {
+            clearTimeout(timerDeletar);
+            timerDeletar = null;
+            janela.style.filter = "none";
+            janela.style.opacity = "1";
+        }
     }
 
     if (cabeca) {
