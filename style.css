@@ -40,48 +40,48 @@ body{
 }
 
 #janela-calc{
-    top: 100px;
-    z-index: 100;
-}
-
-#janela-pesquisa{
-    top: 120px;
+    top: 122px;
     z-index: 101;
 }
 
+#janela-pesquisa{
+    top: 276px;
+    z-index: 108;
+}
+
 #janela-clima{
-    top: 140px;
+    top: 144px;
     z-index: 102;
 }
 
 #janela-notas{
-    top: 160px;
+    top: 166px;
     z-index: 103;
 }
 
 #janela-bemvindo{
-    top: 180px;
+    top: 188px;
     z-index: 104;
 }
 
 #janela-piada{
-    top: 200px;
+    top: 210px;
     z-index: 105;
 }
 
 #janela-jogo{
-    top: 220px;
+    top: 232px;
     z-index: 106;
 }
 
 #janela-pintar{
-    top: 240px;
+    top: 254px;
     z-index: 107;
 }
 
 #janela-musica{
-    top: 260px;
-    z-index: 108;
+    top: 100px;
+    z-index: 100;
 }
 
 .janela-cabeca {
