@@ -39,14 +39,14 @@ body{
 }
 
 #janela-calc{
-    left: calc(100% - 1200px);
+    left: calc(100% - 500px);
     top: 150px;
     z-index: 101;
 }
 
 #janela-pesquisa{
     left: calc(100% - 350px);
-    top: 250px;
+    top: 225px;
     z-index: 106;
 }
 
@@ -82,12 +82,12 @@ body{
 
 #janela-pintar{
     left: calc(100% - 350px);
-    top: 225px;
+    top: 250px;
     z-index: 105;
 }
 
 #janela-musica{
-    left: calc(100% - 1200px);
+    left: calc(100% - 600px);
     top: 100px;
     z-index: 100;
 }
