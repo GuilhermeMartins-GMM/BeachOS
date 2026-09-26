@@ -495,6 +495,10 @@ const frases = [
     "What do you call fake spaghetti? An impasta.",
     "Did you hear about the worst zoo in the world? It only has one dog. It's a real shih tzu.",
     "Ctrl + Z is the greatest invention in human history.",
+    "A skeleton went to a party. He had nobody to go with.",
+    "My friend got fired from his job at the calendar factory. All he did was take a few days off.",
+    "I asked the librarian if the library had any books on paranoia. She whispered, 'They're right behind you.'",
+    "The bicycle couldn’t stand up by itself. It was two-tired.",
     "Why should you knock on your refrigerator door before opening it? There may be salad dressing in there."
 ];
 

@@ -27,10 +27,8 @@ body{
 }
 
 .janela {
-    z-index: 100;
     display: none;
-    position: absolute;
-    top: 180px;
+    position: absolute; 
     left: calc(100% - 400px);
     width: 300px;
     background-color: rgba(18, 18, 20, 0.85); 
@@ -39,6 +37,51 @@ body{
     box-shadow: 0px 8px 32px rgba(0,0,0,0.5);
     overflow: hidden;
     cursor: grab;
+}
+
+#janela-calc{
+    top: 100px;
+    z-index: 100;
+}
+
+#janela-pesquisa{
+    top: 120px;
+    z-index: 101;
+}
+
+#janela-clima{
+    top: 140px;
+    z-index: 102;
+}
+
+#janela-notas{
+    top: 160px;
+    z-index: 103;
+}
+
+#janela-bemvindo{
+    top: 180px;
+    z-index: 104;
+}
+
+#janela-piada{
+    top: 200px;
+    z-index: 105;
+}
+
+#janela-jogo{
+    top: 220px;
+    z-index: 106;
+}
+
+#janela-pintar{
+    top: 240px;
+    z-index: 107;
+}
+
+#janela-musica{
+    top: 260px;
+    z-index: 108;
 }
 
 .janela-cabeca {
@@ -79,6 +122,7 @@ body{
 }
 
 .icone img {
+    background-color: white;
     border-radius: 14px;
     object-fit: cover;
     user-select: none;
