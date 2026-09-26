@@ -29,7 +29,6 @@ body{
 .janela {
     display: none;
     position: absolute; 
-    left: calc(100% - 400px);
     width: 300px;
     background-color: rgba(18, 18, 20, 0.85); 
     backdrop-filter: blur(8px); 
@@ -40,46 +39,55 @@ body{
 }
 
 #janela-calc{
-    top: 122px;
+    left: calc(100% - 1200px);
+    top: 150px;
     z-index: 101;
 }
 
 #janela-pesquisa{
-    top: 276px;
-    z-index: 108;
-}
-
-#janela-clima{
-    top: 144px;
-    z-index: 102;
-}
-
-#janela-notas{
-    top: 166px;
-    z-index: 103;
-}
-
-#janela-bemvindo{
-    top: 188px;
-    z-index: 104;
-}
-
-#janela-piada{
-    top: 210px;
-    z-index: 105;
-}
-
-#janela-jogo{
-    top: 232px;
+    left: calc(100% - 350px);
+    top: 250px;
     z-index: 106;
 }
 
+#janela-clima{
+    left: calc(100% - 350px);
+    top: 100px;
+    z-index: 100;
+}
+
+#janela-notas{
+    left: calc(100% - 350px);
+    top: 125px;
+    z-index: 101;
+}
+
+#janela-bemvindo{
+    left: calc(100% - 350px);
+    top: 150px;
+    z-index: 102;
+}
+
+#janela-piada{
+    left: calc(100% - 350px);
+    top: 175px;
+    z-index: 103;
+}
+
+#janela-jogo{
+    left: calc(100% - 350px);
+    top: 200px;
+    z-index: 104;
+}
+
 #janela-pintar{
-    top: 254px;
-    z-index: 107;
+    left: calc(100% - 350px);
+    top: 225px;
+    z-index: 105;
 }
 
 #janela-musica{
+    left: calc(100% - 1200px);
     top: 100px;
     z-index: 100;
 }
